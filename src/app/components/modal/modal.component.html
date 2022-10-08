@@ -1,0 +1,64 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ "customer_details" | translate }}</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <table *ngIf="customer" class="table table-bordered">
+    <tbody>
+      <tr>
+        <td>{{ "customer.id" | translate }}</td>
+        <td>
+          {{ customer.id }}
+        </td>
+      </tr>
+      <tr>
+        <td>{{ "customer.first_name" | translate }}</td>
+        <td>
+          {{ customer.name | split: " ":0 }}
+        </td>
+      </tr>
+      <tr>
+        <td>{{ "customer.last_name" | translate }}</td>
+        <td>
+          {{ customer.name | split: " " }}
+        </td>
+      </tr>
+      <tr>
+        <td>{{ "customer.province_code" | translate }}</td>
+        <td>
+          {{ customer.location }}
+        </td>
+      </tr>
+      <tr>
+        <td>{{ "customer.province" | translate }}</td>
+        <td>
+          {{ customer.location | province }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    type="submit"
+    (click)="confirm()"
+  >
+    Save
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-danger"
+    (click)="modal.dismiss('Close click')"
+  >
+    Close
+  </button>
+</div>
+
+<!-- <button class="btn btn-outline-primary mb-2 me-2" (click)="openLg(content)">Large modal</button> -->

@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+.col {
+  text-align: center;
+}
+
+tr.disabled {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.box-shadow {
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+}
+
+.message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: xx-large;
+}
+
+.customer-list-table {
+  height: 450px;
+}

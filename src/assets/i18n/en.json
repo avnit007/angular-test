@@ -1,0 +1,10 @@
+{
+  "customer": {
+    "id":"Id",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "province_code": "Province Code",
+    "province": "Province"
+  },
+  "customer_details":"Customers Details"
+}

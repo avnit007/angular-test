@@ -1,0 +1,70 @@
+<div class="container">
+    <h2 class="text-center mt-3">Customer List</h2>
+    <div
+      class="row justify-content-center mt-3"
+      *ngIf="customers && customers.length > 0; else customersNotFound"
+    >
+      <div class="col-8">
+        <div class="customer-list-table">
+          <table class="table box-shadow mt-3">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">{{ "customer.id" | translate }}</th>
+                <th scope="col">{{ "customer.first_name" | translate }}</th>
+                <th scope="col">{{ "customer.last_name" | translate }}</th>
+                <th scope="col">{{ "customer.province_code" | translate }}</th>
+                <th scope="col">{{ "customer.province" | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let customer of customers; index as i"
+                [ngClass]="{ disabled: !customer.active }"
+                (click)="customer.active && showDetails(customer)"
+                class="text-center"
+              >
+                <th scope="row">{{ customer.id }}</th>
+                <td>
+                  {{ customer.name | split: " ":0 }}
+                </td>
+                <td>
+                  {{ customer.name | split: " " }}
+                </td>
+                <td>
+                  {{ customer.location }}
+                </td>
+                <td>
+                  {{ customer.location | province }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-between p-2">
+          <ngb-pagination
+            [collectionSize]="collectionSize"
+            [(page)]="page"
+            [pageSize]="pageSize"
+            (pageChange)="refreshCustomers()"
+          >
+          </ngb-pagination>
+  
+          <select
+            class="form-select"
+            style="width: auto"
+            [(ngModel)]="pageSize"
+            (ngModelChange)="refreshCustomers()"
+          >
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="10">10</option>
+            <option [ngValue]="15">15</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  
+    <app-alert-popup></app-alert-popup>
+    <ng-template #customersNotFound>
+      <div class="message">Customers are not available.</div>
+    </ng-template>
+  </div>
