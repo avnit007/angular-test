@@ -1,12 +1,12 @@
-<div class="container">
-    <h2 class="text-center mt-3">Customer List</h2>
+<div class="container">  
     <div
-      class="row justify-content-center mt-3"
-      *ngIf="customers && customers.length > 0; else customersNotFound"
+      class="row justify-content-center my-3"
+      *ngIf="!SpinnerService.isLoading && customers && customers.length > 0"
     >
-      <div class="col-8">
+    <div class="col-8  box-shadow my-3">
+        <h2 class="text-center mt-3">Customer List</h2>
         <div class="customer-list-table">
-          <table class="table box-shadow mt-3">
+          <table class="table mt-3">
             <thead>
               <tr class="text-center">
                 <th scope="col">{{ "customer.id" | translate }}</th>
@@ -64,7 +64,9 @@
     </div>
   
     <app-alert-popup></app-alert-popup>
-    <ng-template #customersNotFound>
-      <div class="message">Customers are not available.</div>
-    </ng-template>
+    <div *ngIf="!SpinnerService.isLoading && customers && customers.length == 0 ">
+      
+        <div class="message">Customers are not available.</div>
+      
+    </div>
   </div>

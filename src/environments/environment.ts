@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://ballistictest.azurewebsites.net/api"
+  apiUrl:"https://corsanywhere.herokuapp.com/https://ballistictest.azurewebsites.net/api"
 };
 
 /*

@@ -19,9 +19,10 @@ export class CustomerService {
     let firstcustomer = data && JSON.stringify(data);
     let timestamp = new Date().toISOString();
     firstcustomer = window.btoa(firstcustomer);
-    let payload = { firstcustomer, timestamp }
+    let payload = { firstcustomer, timestamp };
     const token = this.auth.getAuthorizationToken();
-    let options = { headers: new HttpHeaders({ "x-client-id": token }) }
+    const headers = new HttpHeaders().set("x-client-id", token);
+    let options = { headers: headers };
     return this.http.post(apiRoutes.customer.Post, payload, options);
   }
 

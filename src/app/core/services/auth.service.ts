@@ -8,6 +8,6 @@ export class AuthService {
   constructor() { }
 
   getAuthorizationToken() {
-    return '1234';
+    return '12345';
   }
 }

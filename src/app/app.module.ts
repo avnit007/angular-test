@@ -17,6 +17,7 @@ import { AlertPopupComponent } from './components/alert-popup/alert-popup.compon
 import { httpInterceptorProviders } from "./core/http-interceptors/index";
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './pages/home/home.component';
     ModalComponent,
     AlertPopupComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,4 @@
 import { Injectable, TemplateRef } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertPopupComponent } from '../../components/alert-popup/alert-popup.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +6,7 @@ import { AlertPopupComponent } from '../../components/alert-popup/alert-popup.co
 export class HttpErrorService {
   toasts: any[] = [];
 
-  showError(textOrTpl: string | TemplateRef<any>, options: any = {}) {
+  showAlert(textOrTpl: string | TemplateRef<any>, options: any = {}) {
     this.toasts.push({ textOrTpl, ...options });
   }
 
