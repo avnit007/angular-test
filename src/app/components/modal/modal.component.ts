@@ -9,16 +9,10 @@ import { Customer } from "../../interfaces/index";
 export class ModalComponent implements OnInit {
 
   @Input() public customer: Customer | undefined;
-  // @Output() closeMeEvent = new EventEmitter();
-  @Output() confirmEvent = new EventEmitter();
   constructor(public modal: NgbActiveModal) { }
 
   ngOnInit(): void {
   }
 
-  confirm() {
-    this.confirmEvent.emit();
-    this.modal.close();
-  }
 
 }

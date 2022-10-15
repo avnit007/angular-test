@@ -20,7 +20,6 @@ tr {
   background: #f2f2f2;
   overflow: hidden;
   border-radius: 20px;
-  cursor: pointer;
   box-shadow: 0 0 20px 8px #d0d0d0;
 }
 
@@ -35,4 +34,8 @@ tr {
 
 .customer-list-table {
   min-height: 450px;
+}
+
+.alert-popup-warning {
+  border:1px solid #ff0000;
 }
